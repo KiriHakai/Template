@@ -1,0 +1,11 @@
+name: check-size
+run-name: How heavy could you be ?
+on: [push, pull_request]
+jobs:
+    check-size:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout
+            - run: echo ${{github.head_ref}}
+            - run: du -skh --exclude=" .git"
+
