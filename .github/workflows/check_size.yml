@@ -5,7 +5,8 @@ jobs:
     check-size:
         runs-on: ubuntu-latest
         steps:
-            - run: actions/checkout
+            - uses: actions/checkout@v4
+            # with: ${{github.workspace}}
             - run: echo ${{github.head_ref}}
             - run: du -skh --exclude=" .git"
 
